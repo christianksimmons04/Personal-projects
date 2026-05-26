@@ -75,7 +75,7 @@ print("===ROUND RECAP===\n")
 
 print(f"[You chose: {user_option}]\n")
 
-print(f"[The hider chose: {get_spot}]\n")
+print(f"[The Seeker chose: {get_spot}]\n")
 
 if winner == True:
     print("[You won!]\n")
