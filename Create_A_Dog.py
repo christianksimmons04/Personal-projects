@@ -2,13 +2,13 @@
 # Create A Dog
 
 #Class
-
 class Dog:
     #Attributes
     name = ""
     breed = ""
     color = ""
     gender = ""
+    # Get user input
     def get_details(my_dog):
         name_input = input("Choose a name: ")
         breed_input = input("Choose a breed: ")
@@ -16,6 +16,8 @@ class Dog:
         gender_input = input("Choose a gender: ")
         print(f"Dog name: {name_input} | Dog breed: {breed_input} | Dog color: {color_input} | Dog gender: {gender_input}")
 
+#Dog
 user_dog = Dog()
 
+#User dog
 user_dog.get_details()
