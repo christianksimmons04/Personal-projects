@@ -1,5 +1,5 @@
 # Written by Christian Simmons
-# Win At Betting or Something
+# Win At Betting or Something [WORK IN PROGRESS]
 
 # Imports
 import random
