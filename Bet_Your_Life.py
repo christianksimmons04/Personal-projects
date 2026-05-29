@@ -1,5 +1,5 @@
 # Written by Christian Simmons
-# Win At Betting or Something [WORK IN PROGRESS]
+# Win At Betting or Something
 
 # Imports
 import random
@@ -33,7 +33,7 @@ class Horse:
         return self.name
 
     def __str__(self):
-        return f"{self.name} (Spd:{self.speed} Sta:{self.stamina})"
+        return f"{self.name} (Spd:{self.speed} Sta:x{self.stamina})"
     
     def __repr__(self):
         return self.__str__()
@@ -61,6 +61,16 @@ class Game: # Game class
         user_input_int = int(user_input)
         user_bet = input("How much do you want to bet: \n")
         user_bet_int = int(user_bet)
+
+        if user_input_int >= 4:
+            print("[ERROR! Your ignorance has costed you! Also, you got ran over by a horse and sadly passed away.]")
+            self.player_money = 0
+            self.deadline = 7
+
+        if user_bet_int >= self.player_money:
+            print("[ERROR! You have been caught trying to use counterfeit money. As a result, you're now sleeping with the fishes...]")
+            self.player_money = 0
+            self.deadline = 7
 
         horse_one_result = horse_one.speed + horse_one.stamina + horse_one.experience - horse_one.temperament
         horse_two_result = horse_two.speed + horse_two.stamina + horse_two.experience - horse_two.temperament
@@ -109,7 +119,7 @@ while is_active == True:
     if is_active == True and game.player_money > 0:
         game.start()
     elif game.player_money > 100:
-        print("You win!")
+        print(f"You win, {user_name}!")
         break
     elif game.player_money <= 0:
         print("GAME OVER!")
